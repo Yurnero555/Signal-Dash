@@ -97,6 +97,41 @@ Content-Type: application/json
 }
 ```
 
+### Example Usage
+
+Track an exposure:
+
+```bash
+curl -X POST http://localhost:3000/api/track \
+  -H "Content-Type: application/json" \
+  -d '{
+    "experimentId": 1,
+    "variantId": 2,
+    "userKey": "user_123",
+    "eventType": "exposure",
+    "props": {"source": "web"}
+  }'
+```
+
+Track a conversion:
+
+```bash
+curl -X POST http://localhost:3000/api/track \
+  -H "Content-Type: application/json" \
+  -d '{
+    "experimentId": 1,
+    "variantId": 2,
+    "userKey": "user_123",
+    "eventType": "conversion"
+  }'
+```
+
+**Common Mistakes:**
+
+- ❌ Using `variantId` from a different experiment (returns 400 error)
+- ❌ Missing `userKey` (validation error)
+- ❌ Sending duplicate events (returns `"duplicate": true`)
+
 ## Assumptions
 
 Signal Dash makes the following architectural assumptions:
@@ -160,6 +195,16 @@ ANTHROPIC_API_KEY=sk-ant-...
 *AI-generated readout with decision form*
 
 > **Note**: To add screenshots, run the app locally and capture images following instructions in [docs/screenshots/README.md](docs/screenshots/README.md)
+
+## Demo Script
+
+Follow these steps to explore Signal Dash:
+
+1. **Dashboard** - View experiment list with status workflow (Draft → Review → Running → Readout → Shipped/Killed)
+2. **Create Experiment** - Click "New Experiment" to define hypothesis, variants, and primary metric
+3. **Track Events** - Use `/api/track` endpoint to send exposure and conversion events (see cURL examples above)
+4. **View Results** - Click on experiment to see conversion rates, lift, p-value, confidence interval, and Chart.js visualization
+5. **Generate Readout** - Click "View Readout" for AI-assisted summary (or deterministic fallback) and make ship/kill decision
 
 ## Docs
 
